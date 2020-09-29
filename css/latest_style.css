@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+/* latest basic style */
+.lt {position:relative;width:100%;margin-bottom:20px;background:#fff;min-height:256px; border-top:1px solid #d9dee9}
+.lt .lat_title {display:block;padding:0 15px;line-height:45px;font-size:1.2em;border-bottom:1px solid #e2e2e2;color:#253dbe}
+.lt .lat_title a {display:inline-block;position:relative}
+.lt ul {padding:0 15px}
+.lt .lt_ul>li {position:relative;line-height:18px;padding:15px 0;border-bottom:1px dotted #d6d7d6}
+.lt .lt_ul>li a {line-height:20px;}
+.lt li .lt_tit {font-size:15px}
+.lt li:last-child {border-bottom:0}
+.lt li:after {display:block;visibility:hidden;clear:both;content:""}
+.lt li .lt_img {display:block;float:left;width:70px;height:45px;margin-right:10px}
+.lt li a:hover {color:#3598dc}
+.lt li .fa-heart {color:#ff0000}
+.lt li .fa-lock {display:inline-block;width:16px;line-height:14px;font-size:0.833em;color:#fff;background:#262b88;text-align:center;border-radius:2px;margin-right:3px;font-size:12px;border:1px solid #262b88}
+.lt li .new_icon {display:inline-block;width:16px;line-height:14px;font-size:0.833em;color:#fff;background:#3fd49e;border:1px solid #32c791;text-align:center;border-radius:2px;margin-left:3px}
+.lt li .hot_icon {display:inline-block;width:16px;line-height:14px;font-size:0.833em;color:#fff;background:#ff7261;border:1px solid #e75341;text-align:center;border-radius:2px}
+.lt li .fa-caret-right {color:#bbb}
+.lt .lt_ul li.empty_li {line-height:225px;text-align:center}
+
+.lt .lct_info {padding:0 !important;display:block;font-size:1em;text-align:left;line-height:18px; float:right;}
+.lt .lct_info:after {display:block;visibility:hidden;clear:both;content:""}
+.lt .lct_info li {display:inline-block;float:left}
+.lt .lct_info .lt_nick {color:#999}
+.lt .lct_info .lt_date {color:#999;display:inline-block;margin-left:5px}
+.lt .lct_info .lt_comnt {color:#396dbb;margin:2px 5px}
+.lt .lct_info .lt_comnt i {color:#197bff}
+.lt .sv_member {color:#999}
+
+.lt .lt_more {position:absolute;top:10px;right:15px}
+
+
+
+
+
+/* latest pic_basic style */
+.pic_lt {position:relative; background:#fff}
+.pic_lt .lat_title {display:block;line-height:45px;font-size:1.083em;color:#000; padding-bottom:20px; width:1100px; margin:0 auto;}
+.pic_lt .lat_title a{display:inline-block; position:relative; font-size:20px; color:#000;}
+
+.pic_lt ul:after {display:block;visibility:hidden;clear:both;content:""}
+.pic_lt ul {}
+.pic_lt li {float:left;width:353px;}
+.pic_lt li:first-child{margin-left:0;}
+.pic_lt li .lt_img {margin:5px 0;display:block}
+.pic_lt li .lt_tit {margin:10px 0;font-size:18px;display:inline-block;word-wrap:break-word;max-width:100%; color:#000;}
+.pic_lt li .lt_con{margin-bottom:5px;}
+.pic_lt li .lt_img img {width:100%;height:auto}
+.pic_lt li a:hover {color:#a22121}
+
+.pic_lt li a:hover {color:#3598dc}
+.pic_lt li .fa-heart {color:#ff0000}
+.pic_lt li .fa-lock {display:inline-block;width:16px;line-height:14px;font-size:0.833em;color:#fff;background:#262b88;text-align:center;border-radius:2px;font-size:12px;border:1px solid #262b88}
+.pic_lt li .new_icon {display:inline-block;width:16px;line-height:14px;font-size:0.833em;color:#fff;background:#3fd49e;border:1px solid #32c791;text-align:center;border-radius:2px;margin:5px 0 5px 3px}
+.pic_lt li .hot_icon {display:inline-block;width:16px;line-height:14px;font-size:0.833em;color:#fff;background:#ff7261;border:1px solid #e75341;text-align:center;border-radius:2px;margin:5px 0 5px 3px}
+.pic_lt li .fa-caret-right {color:#bbb}
+
+.empty_li {float:none !important;width:100% !important;line-height:160px;margin:0 !important;padding:0 !important;border-right:0 !important;text-align:center}
+
+.pic_lt .lct_info {margin:0;padding:0;font-size:1em}
+.pic_lt .lct_info:after {display:block;visibility:hidden;clear:both;content:""}
+.pic_lt .lt_nick {color:#999}
+.pic_lt .lt_date {color:#999}
+.pic_lt .lt_comnt {color:#396dbb}
+.pic_lt .lt_comnt i {color:#197bff}
+.pic_lt .sv_member {color:#999}
+
+.pic_lt .lt_more {position:absolute;top:12px;right:15px;font-size:0.95em;font-weight:bold;border:1px solid #17bb9c;color:#17bb9c;padding:4px 8px;border-radius:20px}
+
+.main-banner__btn--prev2{left:0px;}
+.main-banner__btn--next2{right:0px;}
