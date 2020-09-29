@@ -1,0 +1,907 @@
+
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- <meta http-equiv="imagetoolbar" content="no"> -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>굿뉴스월드</title>
+	<script type="text/javascript">
+	//접속 기기 확인 후 해당 버전으로 
+	   var mobile_keys = new Array('iPhone','iPod','Android','BlackBerry','Windows Phone','Windows CE','LG','MOT','SAMSUNG','SonyEricsson','Nokia');
+	   if(document.URL.match('move_pc_screen')) mobile_keys = null; // URL 파라메타에 'move_pc_screen' 가 포함되어 있을땐 적용안함
+	   for(i in mobile_keys){
+		if(navigator.userAgent.match(mobile_keys[i]) != null){
+		 location.href = "../goodnews/mobile/index.html"; // 모바일 홈 연결 주소
+		 break;
+		}
+	   }
+	</script>
+<link rel="stylesheet" href="../goodnews/css/default.css">
+<link rel="stylesheet" href="../goodnews/css/latest_style.css">
+<link rel="stylesheet" href="../goodnews/css/default_board.css">
+<link rel="stylesheet" href="../goodnews/css/default_contents.css">
+<link rel="stylesheet" href="../goodnews/css/swiper.min.css">
+<link rel="stylesheet" href="../goodnews/css/slick.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+<script src="../goodnews/js/jquery-1.12.4.min.js"></script>
+<script src="../goodnews/js/jquery-migrate-1.4.1.min.js"></script>
+<script src="../goodnews/js/common.js"></script>
+<script src="../goodnews/js/swiper/swiper.jquery.min.js"></script>
+<script src="../goodnews/js/swiper/swiper.extend.user.js"></script>
+<script src="../goodnews/js/jquery.bxslider.js"></script>
+<script src="../goodnews/js/slick.js"></script>
+
+</head>
+
+<style type="text/css">
+	#container_wr{width:100%; min-width:1100px; padding:0;}
+	#container{margin-bottom:60px;}
+	#ft{margin-top:0px !important}
+
+	.main_band{background:#0087d1; text-align:center; color:#fff; padding:20px 0; width:100%; margin-bottom:80px; line-height:385%; height:155px;}
+	.main_band h4{color:#ffd800; font-size:30px; font-weight:normal; margin-bottom:10px;}
+	.main_band span{font-size:26px;}
+
+	.bnslider2_wrap{width:1190px; margin:0 auto;}
+	#bnslider2{position:relative;  margin-bottom:40px; width:1100px; margin:0 auto; }
+
+
+	.main_body_wrap{width:1100px; margin:0 auto;}
+
+	.main_band2{width:1100px; height:155px; background:url("./img/main_band2_bg1.png") no-repeat 50px bottom, url("./img/main_band2_bg2.png") no-repeat center bottom; margin:80px 0;}
+	.main_band2 a{display:block; height:155px;}
+
+	.tab_youtub_wrap{overflow:hidden; margin:80px 0;}
+	.pic_tab_wrap {width:540px; float:left; margin-right:20px;}
+	.tab_cnt, .pic_tab{width:540px;}
+	.pic_youtube{width:540px; height:305px; float:left;}
+
+	.main_body_bottom{overflow:hidden; margin:80px 0 20px;}
+	.main_body_bottom figure span{cursor:pointer;}
+
+
+	.snip1361 {
+	  position: relative;
+	  overflow: hidden;
+	  margin:0 0 0 30px;
+	  min-width: 230px;
+	  max-width: 345px;
+	  width: 100%;
+	  color: #141414;
+	  text-align: left;
+	  line-height: 1.4em;
+	  float:left;
+	}
+
+	.snip1361 * {
+	  -webkit-box-sizing: border-box;
+	  box-sizing: border-box;
+	  -webkit-transition: all 0.35s ease;
+	  transition: all 0.35s ease;
+	}
+	.snip1361 img {
+	  max-width: 100%;
+	  vertical-align: top;
+	}
+	.snip1361 figcaption {
+	  position: absolute;
+	  top: calc(83%);
+	  width: 100%;
+	  background-color: rgba(0,143,213,0.8);
+	  padding: 15px 40px 65px;
+	}
+	.snip1361 figcaption:before {
+	  position: absolute;
+	  content: '';
+	  z-index: 2;
+	  bottom: 100%;
+	  left: 0;
+	  width: 100%;
+	  height: 80px;
+	  background-image: -webkit-linear-gradient(top, transparent 0%, rgba(0,143,213,0.8) 100%);
+	  background-image: linear-gradient(to bottom, transparent 0%, rgba(0,143,213,0.8) 100%);
+	}
+	.snip1361 h3,
+	.snip1361 p {
+	  margin: 0 0 20px;
+	  color:#fff;
+	}
+	.snip1361 h3 {
+	  font-weight: 600;
+	  font-size: 18px;
+	  line-height: 1.2em;
+	  text-transform: uppercase;
+	}
+	.snip1361 p {
+	  font-size: 15px;
+	  word-break:keep-all;
+	  letter-spacing: 1px;
+	  opacity: 0.9;
+	}
+	.snip1361 a {
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  z-index: 2;
+	}
+	.snip1361 span{float:right;}
+
+	.snip1361:hover figcaption,
+	.snip1361.hover figcaption {
+	  top: 180px;
+	}
+
+	.snip1362{float:left; margin:0 0 0 30px; width:345px; height:339px; position:relative;}
+	.snip1362 figcaption{position:absolute; top:40px; left:40px; color:#fff;}
+	.snip1362 figcaption h3{font-weight: 600;  font-size: 18px; line-height: 1.2em; text-transform: uppercase; margin:0 0 20px;}
+	.snip1362 figcaption p{font-size: 15px; word-break: keep-all; letter-spacing: 1px; opacity: 0.9;}
+	.snip1362 .baro_btn{color:#fff; padding:5px 20px; border:1px solid #fff; border-radius:20px; position:absolute; bottom:40px; left:40px;}
+	.snip1362 .baro_btn:hover{background:#fff; color:#008fd5;}
+</style>
+
+
+<body class="lang_ko_KR">
+
+<!-- 컨텐츠 상단 고정메뉴 스크립트 -->
+<script type="text/javascript">
+
+	//slide way
+	$(function(){
+		var $nav = $("#hd_wrapper")
+		var $nav_list = $(".gnb_menu_li");
+		$nav_list.on("mouseover focus", function(e) {
+			$nav.addClass("on");
+			$("#gnb_all").hide();
+			$("#search_area").css("height","0px");
+		});
+		$nav.on("mouseleave", function(e) {
+			$nav.removeClass("on");
+		});
+		$(".gnb_2dli:last > a").on("blur", function() {
+			$nav.removeClass("on");
+		});
+	});
+
+
+	function actionTab(Num){
+
+		if($(".locationdepthdrop" + Num).height() == 0){
+			var height = ($(".locationdepthdrop" + Num).find("li").height() + parseInt($(".locationdepthdrop" + Num).find("li").css("padding-top")) + parseInt($(".locationdepthdrop" + Num).find("li").css("padding-bottom"))) ;
+			$(".locationdepthdrop" + Num).stop().animate({
+				"height" : $(".locationdepthdrop" + Num).find("li").size() * (height + 10)
+			});
+
+			if(Num == 2){
+				$(".locationdepthdrop3").stop().animate({
+					"height" : 0
+				});
+				$(".locationdepthdrop4").stop().animate({
+					"height" : 0
+				});
+			}
+		}else{
+			$(".locationdepthdrop" + Num).stop().animate({
+				"height" : 0
+			})
+		}
+	}
+
+</script>
+
+
+<!-- header start { -->
+<div id="hd">
+	<h1 id="hd_h1">굿뉴스월드</h1>
+
+	<div id="skip_to_container"><a href="#container">본문 바로가기</a></div>
+
+	<div id="tnb">
+		<ul>
+			<li><a href="javascript:;"><span><img src="./img/tnb_good.png" alt="굿뉴스의료봉사회"></span> 굿뉴스의료봉사회</a></li>
+			<li><a href="javascript:;">기부금영수증</a></li>
+			<li><a href="javascript:;">나의후원</a></li>
+						<li><a href="javascript:;">회원가입</a></li>
+			<li><a href="javascript:;"><b>로그인</b></a></li>
+			
+					</ul>
+	</div>
+
+	<div id="hd_fix">
+		<div id="hd_wrapper">
+			<div id="wrapper_area">
+
+			<div id="logo">
+				<a href="javascript:;"><img src="./img/logo.png" alt="굿뉴스월드"></a>
+			</div>
+
+			<nav id="gnb">
+				<h2>메인메뉴</h2>
+				<div class="gnb_wrap">
+					<ul id="gnb_1dul">
+						<li class="gnb_1dli gnb_mnal"><button type="button" class="gnb_menu_btn " id="gnb_menu"><i class="fa fa-bars" aria-hidden="true"></i><span class="sound_only">전체메뉴열기</span></button></li>
+						<li class="gnb_1dli gnb_mnal"><button type="button" class="gnb_menu_btn gnb_sch_btn"><i class="fa fa-search"></i><span class="sound_only">검색</span></button></li>
+												<li class="gnb_1dli gnb_menu_li">
+							<a href="javascript:;" target="_self" class="gnb_1da">굿뉴스월드</a>
+							<ul class="gnb_2dul">
+								<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">단체소개</a></li>
+															<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">​활동보고</a></li>
+															<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">함께하는 사람들</a></li>
+															<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">오시는 길</a></li>
+							</ul>
+						</li>
+												<li class="gnb_1dli gnb_menu_li">
+							<a href="javascript:;" target="_self" class="gnb_1da">사업안내</a>
+							<ul class="gnb_2dul">
+								<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">보건의료</a></li>
+															<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">교육지원</a></li>
+															<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">지역개발</a></li>
+															<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">긴급구호</a></li>
+															<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">활동지역</a></li>
+							</ul>
+						</li>
+												<li class="gnb_1dli gnb_menu_li">
+							<a href="javascript:;" target="_self" class="gnb_1da">후원참여</a>
+							<ul class="gnb_2dul">
+								<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">​후원안내</a></li>
+															<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">​캠페인후원</a></li>
+															<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">기업후원</a></li>
+															<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">자원봉사</a></li>
+							</ul>
+						</li>
+												<li class="gnb_1dli gnb_menu_li">
+							<a href="javascript:;" target="_self" class="gnb_1da">커뮤니티</a>
+							<ul class="gnb_2dul">
+								<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">공지사항</a></li>
+															<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">언론보도</a></li>
+															<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">뉴스레터</a></li>
+															<li class="gnb_2dli"><a href="javascript:;" target="_self" class="gnb_2da">GNW이야기</a></li>
+							</ul>
+						</li>
+												<li class="hoowon gnb_1dli"><a href="javascript:;">후원하기</a></li>
+					</ul>
+				</div>
+			</nav>
+			</div>
+		</div> 
+
+		<div id="gnb_all">
+			<h2>전체메뉴</h2>
+			<ul class="gnb_al_ul">
+								<li class="gnb_al_li">
+					<a href="javascript:;" target="_self" class="gnb_al_a">굿뉴스월드</a>
+					<ul>
+						<li><a href="javascript:;" target="_self">단체소개</a></li>
+											<li><a href="javascript:;" target="_self">​활동보고</a></li>
+											<li><a href="javascript:;" target="_self">함께하는 사람들</a></li>
+											<li><a href="javascript:;" target="_self">오시는 길</a></li>
+					</ul>
+				</li>
+								<li class="gnb_al_li">
+					<a href="javascript:;" target="_self" class="gnb_al_a">사업안내</a>
+					<ul>
+						<li><a href="javascript:;" target="_self">보건의료</a></li>
+											<li><a href="javascript:;" target="_self">교육지원</a></li>
+											<li><a href="javascript:;" target="_self">지역개발</a></li>
+											<li><a href="javascript:;" target="_self">긴급구호</a></li>
+											<li><a href="javascript:;" target="_self">활동지역</a></li>
+					</ul>
+				</li>
+								<li class="gnb_al_li">
+					<a href="javascript:;" target="_self" class="gnb_al_a">후원참여</a>
+					<ul>
+						<li><a href="javascript:;" target="_self">​후원안내</a></li>
+											<li><a href="javascript:;" target="_self">​캠페인후원</a></li>
+											<li><a href="javascript:;" target="_self">기업후원</a></li>
+											<li><a href="javascript:;" target="_self">자원봉사</a></li>
+					</ul>
+				</li>
+								<li class="gnb_al_li">
+					<a href="javascript:;" target="_self" class="gnb_al_a">커뮤니티</a>
+					<ul>
+						<li><a href="javascript:;" target="_self">공지사항</a></li>
+											<li><a href="javascript:;" target="_self">언론보도</a></li>
+											<li><a href="javascript:;" target="_self">뉴스레터</a></li>
+											<li><a href="javascript:;" target="_self">GNW이야기</a></li>
+					</ul>
+				</li>
+							</ul>
+			<button class="gnb_close_btn"><span class="sound_only">닫기</span><i class="fa fa-times" aria-hidden="true"></i></button>
+		</div>
+
+		<div id="search_area">
+			<div class="search_div">
+			<!-- 통합검색 -->
+				<fieldset>사이트 내 전체검색</fieldset>
+				<form name="fsearchbox" method="get" onsubmit="return fsearchbox_submit(this);">
+				<input type="hidden" name="sfl" value="wr_subject||wr_content">
+				<input type="hidden" name="sop" value="and">
+				<label for="sch_stx" class="sound_only">검색어 필수</label>
+				<input type="text" name="stx" id="sch_stx" maxlength="20" placeholder="통합검색">
+				<button type="button" id="sch_submit" value="검색"> <i class="fa fa-search"></i><span class="sound_only">통합검색</span></button>
+				</form>
+
+				<script>
+				function fsearchbox_submit(f)
+				{
+					if (f.stx.value.length < 2) {
+						alert("검색어는 두글자 이상 입력하십시오.");
+						f.stx.select();
+						f.stx.focus();
+						return false;
+					}
+
+					// 검색에 많은 부하가 걸리는 경우 이 주석을 제거하세요.
+					var cnt = 0;
+					for (var i=0; i<f.stx.value.length; i++) {
+						if (f.stx.value.charAt(i) == ' ')
+							cnt++;
+					}
+
+					if (cnt > 1) {
+						alert("빠른 검색을 위하여 검색어에 공백은 한개만 입력할 수 있습니다.");
+						f.stx.select();
+						f.stx.focus();
+						return false;
+					}
+
+					return true;
+				}
+				</script>
+			<!-- 통합검색 -->
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+	<script>
+
+	jQuery(function($){
+
+		$("#gnb_menu").click(function(){
+			$("#gnb_all").show();
+			var $nav = $("#hd_wrapper");
+			$nav.removeClass("on");
+			$("#search_area").css("height","0px");
+		});
+		$(".gnb_close_btn").click(function(){
+			$("#gnb_all").hide();
+		});
+
+
+		$(".gnb_sch_btn").on("click",function(){
+			if($("#search_area").css("height") != "110px"){
+				$("#search_area").css("height","110px");
+				$("#hd_wrapper").removeClass("on");
+				$("#gnb_all").hide();
+			}else{
+				$("#search_area").css("height","0px");
+			}
+		});
+
+	});
+
+    /*상단메뉴 고정*/
+     var hdoffset = $('#hd_fix').offset();
+     $(window).scroll(function(){
+         if ( $(document).scrollTop() > hdoffset.top ){
+             $('#hd_fix').addClass('hd_wrapperfixed');
+			 $('#hd_wrapper').css('padding', '10px 0');
+
+			 $('#logo img').css('width', '130px');
+			 $('#wrapper_area').addClass("down");
+			 $(".gnb_2dul").css("top","50px");
+			 $("#gnb .gnb_wrap").css("top","-9px");
+			 $("#gnb #gnb_1dul li.hoowon a").css("padding","5px 20px");
+         }else{
+             $('#hd_fix').removeClass('hd_wrapperfixed')
+			 $('#hd_wrapper').css('padding', '25px');
+
+			 $('#logo img').css('width', 'auto');
+			 $('#wrapper_area:after').css('top', '88px');
+			 $(".gnb_2dul").css("top","80px");
+			 $('#wrapper_area').removeClass("down");
+			 $("#gnb .gnb_wrap").css("top","-4px");
+			 $("#gnb #gnb_1dul li.hoowon a").css("padding","10px 20px");
+         }
+     });
+
+	</script>
+</div>
+<!-- } end header -->
+
+<!-- start contents { -->
+<div id="wrapper">
+	
+
+	<div id="container_wr">
+
+		<div id="container">
+							<script>
+// Click the tab to see a list of recent posts.
+$(document).ready(function(){
+    $(".pic_tab_wrap").each(function() {
+        opentab($(this).find(".tablinks").first());
+    });
+});
+
+$(document).on('click', ".tablinks", function() {
+    opentab($(this));
+});
+
+function opentab($this) {
+    var tab_idx = $this.parent(".pic_tab_heading").find(".tablinks").index($this);
+    var $tab_views = $this.parent(".pic_tab_heading").siblings(".tab_cnt");
+    var $tab_links = $this.parent(".pic_tab_heading").find(".tablinks");
+    var $see_more_btn = $this.parent(".pic_tab_heading").siblings(".pic_tab_more");
+
+    $tab_views.css('display', 'none');
+    $tab_links.find('a').removeClass('active');
+    $see_more_btn.css('display', 'none');
+
+    $tab_views.eq(tab_idx).css('display', 'block');
+    $tab_links.eq(tab_idx).find('a').addClass('active');
+    $see_more_btn.eq(tab_idx).css('display', 'block');
+}
+</script>
+
+
+<script type="text/javascript">
+	//유튜브 사이즈 반응형
+  $(window).resize(function(){resizeYoutube();});
+  $(function(){resizeYoutube();});
+  function resizeYoutube(){ $("iframe").each(function(){ if( /^https?:\/\/www.youtube.com\/embed\//g.test($(this).attr("src")) ){ $(this).css("width","100%"); $(this).css("height",Math.ceil( parseInt($(this).css("width")) * 9/16 ) + "px");} }); }
+</script>
+
+<div class="main-visual">
+
+	<div class="main-banner">
+		<div class="main-banner__btn main-banner__btn--prev"><i class="fa fa-chevron-left"></i></div>
+		<div class="main-banner__btn main-banner__btn--next"><i class="fa fa-chevron-right"></i></div>
+
+		<ul id="bnSlider">
+						<li>
+									<a href="javascript:;" >						<img src="./img/banner1.png" alt="소외열대질환 퇴치 프로젝트 '굿바이 부룰리' 우리는 이들 곁에서 힘이 되어줄 것입니다. 소외받는 이들을 기억해 주세요.">
+					</a>							</li>
+						<li>
+									<a href="javascript:;" >						<img src="./img/banner2.png" alt="q베트남 소수민족 겨울나기 지원 캠페인 '겨울, 잃어버린 계절' 베트남 북부 산간지역의 많은 주민이 난방시설 없이 겨울을 버텨내고 있습니다.">
+					</a>							</li>
+						<li>
+									<a href="javascript:;" >						<img src="./img/banner3.png" alt="해외 의료봉사단 파견 프로그램 '평생의 소원' 의사를 한 번 만나보는 것, 그들에게는 평생의 소원입니다. ">
+					</a>							</li>
+					</ul>
+	</div>
+
+</div>
+
+<div class="main_band"><h4>함께 만들어가는 행복한 세상</h4><span>굿뉴스월드는 지구촌 소외된 이웃에게 희망을 전하는 국제개발협력NGO입니다.</span></div>
+
+<div class="bnslider2_wrap">
+	<div class="bnslider2">
+		<!--  사진 최신글2 { -->
+		
+<div class="pic_lt">
+	<div class="main-banner__btn main-banner__btn--prev2"><img src="./img/arrow_l.png" alt="이전"></div>
+	<div class="main-banner__btn main-banner__btn--next2"><img src="./img/arrow_r.png" alt="다음"></div>
+	<h2 class="lat_title"><a href="https://gnworld.org/B34">GNW이야기</a></h2>
+	<ul id="bnSlider2">
+			<li>
+			<a href="javascript:;" class="lt_img"><img src="./img/thumb-3076653877_1573032138.2179_350x248.jpg" alt="" ></a>
+
+			
+			<a href="javascript:;" class="lt_tit">
+				전홍준 이사장, 대한민국 봉사대상 수…
+				
+							</a>
+
+			<div class="lt_con">한국유엔봉사단과 한국국제연합봉사단이 주최하고 서울특별시, 문화체육관광부 등이 후원하는 이 상은 국가와 지역사…</div>
+
+		</li>
+			<li>
+			<a href="javascript:;" class="lt_img"><img src="./img/thumb-3076653877_1573011353.8744_350x248.jpg" alt="" ></a>
+
+			
+			<a href="javascript:;" class="lt_tit">
+				[태국] 랏차부리 의료봉사굿뉴스의료봉…
+				
+							</a>
+
+			<div class="lt_con">9월의 마지막 주말, 굿뉴스의료봉사회 태국지부는 랏차부리 의료봉사를 진행하였습니다!
+
+굿뉴스월드 본부에서…</div>
+
+		</li>
+			<li>
+			<a href="javascript:;" class="lt_img"><img src="./img/thumb-3076653877_1571104850.6351_350x248.jpg" alt="" ></a>
+
+			
+			<a href="javascript:;" class="lt_tit">
+				세계시민은 학교에서부터! 연서중학교 …
+				
+							</a>
+
+			<div class="lt_con">﻿
+
+한글날(10월7일) 바로 전 날이었던 10월 8일! 은평구에 위치한 #연서중학교 에서 굿뉴스월드 #…</div>
+
+		</li>
+			<li>
+			<a href="javascript:;" class="lt_img"><img src="./img/thumb-3076653877_1570434448.4083_350x248.jpg" alt="" ></a>
+
+			
+			<a href="javascript:;" class="lt_tit">
+				글로벌 나눔의료 컨퍼런스 in 태국 …
+				
+							</a>
+
+			<div class="lt_con">컨퍼런스에는 &#39;나눔의료&#39;라는 주제하에 각계각층의 관계자와 활동가, 자원봉사자들이 참석하였습니다…</div>
+
+		</li>
+			<li>
+			<a href="javascript:;" class="lt_img"><img src="./img/thumb-3076653877_1570413287.5853_350x248.jpg" alt="" ></a>
+
+			
+			<a href="javascript:;" class="lt_tit">
+				글로벌 나눔의료 컨퍼런스 in 태국 …
+				
+							</a>
+
+			<div class="lt_con">2019년 6월 21, 22일 태국 방콕 시내 중심에서 &quot;Happiness in Shiaring, …</div>
+
+		</li>
+			<li>
+			<a href="javascript:;" class="lt_img"><img src="./img/thumb-2038831670_1552955338.4107_350x248.jpg" alt="" ></a>
+
+			
+			<a href="javascript:;" class="lt_tit">
+				월드브릿지와 함께하는 굿뉴스월드
+				
+							</a>
+
+			<div class="lt_con">자원봉사자들의 힙한 축제 세계문화페스티벌 월드브릿지와&nbsp;굿뉴스월드가 함께한 이야기를 들어보시죠!</div>
+
+		</li>
+			<li>
+			<a href="javascript:;" class="lt_img"><img src="./img/thumb-047a4a0743a5d59deb9c3bcc7bed8467_350x248.jpg" alt="" ></a>
+
+			
+			<a href="javascript:;" class="lt_tit">
+				케냐 의료봉사를 통해 새 생명을 얻은…
+				
+							</a>
+
+			<div class="lt_con">지난해 8월, 케냐에서 의료봉사를 진행하던 중 목이 부은 상태로 살로메씨가 외과파트에 방문했습니다. 그녀의 …</div>
+
+		</li>
+			<li>
+			<a href="javascript:;" class="lt_img"><img src="./img/thumb-eaa308ca171f313a34a514bdd3390e5f_350x248.png" alt="" ></a>
+
+			
+			<a href="javascript:;" class="lt_tit">
+				[한민족하나로KBS] 의료인이 전하는…
+				
+							</a>
+
+			<div class="lt_con">2008년 부터 매년 의료손길이 필요한 아프리카 사람들을 위해 여름휴가를 반납하는 사람들이 있습니다. 그 중…</div>
+
+		</li>
+			<li>
+			<a href="javascript:;" class="lt_img"><img src="./img/thumb-ea17e0770b085309c8ed2a1fbe9cf512_350x248.jpg" alt="" ></a>
+
+			
+			<a href="javascript:;" class="lt_tit">
+				건강하게 케냐로 돌아가신 앨리스씨!
+				
+							</a>
+
+			<div class="lt_con">지난 달, 저 먼 아프리카 케냐에서 두분의 손님이 찾아 오셨습니다. 행정안전부와 아산사회복지재단의 공모사업에…</div>
+
+		</li>
+			<li>
+			<a href="javascript:;" class="lt_img"><img src="./img/thumb-7ad95060ce0cae5b0b7892b1ca1b3724_350x248.jpg" alt="" ></a>
+
+			
+			<a href="javascript:;" class="lt_tit">
+				아프리카, 동남아 지역 CLF 참가자…
+				
+							</a>
+
+			<div class="lt_con">지난 18일 굿뉴스의료봉사회는 한국에서 진행된 CLF (Christian Leaders Fellowship)…</div>
+
+		</li>
+			</ul>
+</div>
+
+
+<script type="text/javascript">
+<!--
+	/* 메인 배너 */
+	var bnSlider2 = $('#bnSlider2').bxSlider({
+		controls:true,
+		prevSelector: '.main-banner__btn--prev2',
+		nextSelector: '.main-banner__btn--next2',
+        speed: 500,        // 이동 속도를 설정
+        pager: false,      // 현재 위치 페이징 표시 여부 설정
+        moveSlides: 1,     // 슬라이드 이동시 개수
+        slideWidth: 353,   // 슬라이드 너비
+        minSlides: 3,      // 최소 노출 개수
+        maxSlides: 3,      // 최대 노출 개수
+        slideMargin: 20,    // 슬라이드간의 간격
+        auto: true,        // 자동 실행 여부
+        autoHover: true   // 마우스 호버시 정지 여부
+	});
+</script>
+		<!-- } 사진 최신글2 끝 -->
+	</div>
+</div>
+
+<div class="main_body_wrap">
+
+
+
+	<div class="main_band2"><a href="javascript:;"></a></div>
+
+	<div class="tab_youtub_wrap">
+		<div class="pic_tab_wrap">
+
+			<div class="pic_tab_heading">
+				<h2 class="tablinks"><a href="#none">공지사항</a></h2>
+				<h2 class="tablinks"><a href="#none">언론보도</a></h2>
+			</div>
+
+			<div class="tab_cnt pic_tab">
+			<!--  사진 최신글1 { -->
+			
+<div class="lt">
+    <ul class="lt_ul">
+            <li>
+            	        
+            <a href="javascript:;" class="lt_tit"><strong>굿뉴스월드 2020년도 상반기 ODA 영프…</strong></a>
+
+            
+	        	        <ul class="lct_info">
+				<li class="lt_date"> 2019-11-15</li>
+							</ul>
+        </li>
+            <li>
+            	        
+            <a href="javascript:;" class="lt_tit"><strong>KCOC(국제개발협력민간협의회) 정회원 가…</strong></a>
+
+            
+	        	        <ul class="lct_info">
+				<li class="lt_date"> 2019-10-29</li>
+							</ul>
+        </li>
+            <li>
+            	        
+            <a href="javascript:;" class="lt_tit">[모집] 베트남 구들 적정기술 프로젝트 나…</a>
+
+            
+	        	        <ul class="lct_info">
+				<li class="lt_date"> 2019-10-28</li>
+							</ul>
+        </li>
+            <li>
+            	        
+            <a href="javascript:;" class="lt_tit">[모집] 2019 태국 의료캠프 자원봉사자…</a>
+
+            
+	        	        <ul class="lct_info">
+				<li class="lt_date"> 2019-09-23</li>
+							</ul>
+        </li>
+            <li>
+            	        
+            <a href="javascript:;" class="lt_tit">2018년도 굿뉴스월드 세입·세출 결산보고</a>
+
+            
+	        	        <ul class="lct_info">
+				<li class="lt_date"> 2019-05-30</li>
+							</ul>
+        </li>
+            </ul>
+</div>
+			<!-- } 사진 최신글1 끝 -->
+			</div>
+
+			<div class="tab_cnt pic_tab">
+			<!--  사진 최신글2 { -->
+			
+<div class="lt">
+    <ul class="lt_ul">
+            <li>
+            	        
+            <a href="javascript:;" class="lt_tit">굿뉴스월드 전홍준 이사장 '2019 대한민…</a>
+
+            
+	        	        <ul class="lct_info">
+				<li class="lt_date"> 2019-11-08</li>
+							</ul>
+        </li>
+            <li>
+            	        
+            <a href="javascript:;" class="lt_tit">[글로벌뉴스통신] 굿뉴스월드 전홍준 이사장…</a>
+
+            
+	        	        <ul class="lct_info">
+				<li class="lt_date"> 2019-11-08</li>
+							</ul>
+        </li>
+            <li>
+            	        
+            <a href="javascript:;" class="lt_tit">굿뉴스월드, 태국 의료 캠프 지원</a>
+
+            
+	        	        <ul class="lct_info">
+				<li class="lt_date"> 2019-10-04</li>
+							</ul>
+        </li>
+            <li>
+            	        
+            <a href="javascript:;" class="lt_tit">[내외일보] 굿뉴스월드, 태국 의료 캠프 …</a>
+
+            
+	        	        <ul class="lct_info">
+				<li class="lt_date"> 2019-10-04</li>
+							</ul>
+        </li>
+            <li>
+            	        
+            <a href="javascript:;" class="lt_tit">굿뉴스월드 의료봉사단,  코트디부아르서 제…</a>
+
+            
+	        	        <ul class="lct_info">
+				<li class="lt_date"> 2019-08-21</li>
+							</ul>
+        </li>
+            </ul>
+</div>
+			<!-- } 사진 최신글2 끝 -->
+			</div>
+
+			<a href="javascript:;" class="lt_more pic_tab_more"><span class="sound_only"> </span><img src="./img/plus_g.png" alt="더보기"></a>
+			<a href="javascript:;" class="lt_more pic_tab_more"><span class="sound_only"> </span><img src="./img/plus_g.png" alt="더보기"></a>
+		</div>
+
+		<div class="pic_youtube">
+							<iframe width="530" height="298" src="https://www.youtube.com/embed/2dLaubESwi0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe>
+					</div>
+	</div>
+
+	<div class="main_body_bottom">
+		<figure class="snip1361" style="margin-left:0;">
+		  <img src="./img/main_bottom_img1.png" alt="굿뉴스의료봉사회" />
+		  <figcaption>
+			<h3>굿뉴스의료봉사회</h3>
+			<p>전세계 소외된 이웃들의 상처를 치유합니다.</p>
+			<span><img src="./img/plus_w.png" alt="더보기"></span>
+		  </figcaption>
+		  <span href="javascript:;"></span>
+		</figure>
+
+		<figure class="snip1361">
+		  <img src="./img/main_bottom_img2.png" alt="희망캠페인 '만원의 기적'" />
+		  <figcaption>
+			<h3>희망캠페인 '만원의 기적'</h3>
+			<p>도움이 절실한 지구촌 어린이들에게 희망을 전합니다.</p>
+			<span><img src="./img/plus_w.png" alt="더보기"></span>
+		  </figcaption>
+		  <span href="javascript:;"></span>
+		</figure>
+
+		<figure class="snip1362">
+		  <img src="./img/main_bottom_img3.png" alt="투명경영" />
+		  <figcaption>
+			<h3>투명경영</h3>
+			<p>굿뉴스월드는 모든 후원금을 투명하게 사용합니다.</p>
+		  </figcaption>
+		  <span href="javascript:;" class="baro_btn">바로가기</span>
+		</figure>
+	</div>
+
+</div> <!-- main_body_wrap -->
+
+
+<script type="text/javascript">
+	/* 메인 배너 */
+	var bnSlider = $('#bnSlider').bxSlider({
+		//autoHover: true,
+		//pagerSelector: '.selector', //셀렉터에 pager를 $selector에 append
+		//autoControls: true, //재생 정지버튼
+		//autoControlsSelector: '.selector', //재생,정지버튼을 $selector에  append
+		mode:'fade',
+		//tickerHover: true,
+		//autoHover:true,
+		auto:true,
+		controls:true,
+		pause: 3000,
+		pager: true,
+		//autoControls: true, //재생,정지버튼
+		prevSelector: '.main-banner__btn--prev',
+		nextSelector: '.main-banner__btn--next'
+	});
+</script>
+
+
+<script>
+	/* Demo purposes only */
+$(".hover").mouseleave(
+  function () {
+    $(this).removeClass("hover");
+  }
+);
+</script>
+
+
+		
+				</div>
+	</div>
+</div>
+<!-- } end contents -->
+
+<!-- footer start { -->
+<div id="ft">
+
+	<div id="ft_link">
+		<div class="ft_inner">
+			<a href="javascript:;">굿뉴스월드 소개</a>
+			<a href="javascript:;">이용약관</a>
+			<a href="javascript:;">개인정보처리방침</a>
+			<!-- <a href="javascript:;">모바일보기</a> -->
+
+			<div class="sns_wrap">
+				<ul>
+					<li><a href="javascript:;"><img src="./img/ft_sns1.png" alt="페이스북"></a></li>
+					<li><a href="javascript:;"><img src="./img/ft_sns2.png" alt="인스타그램"></a></li>
+					<li><a href="javascript:;"><img src="./img/ft_sns3.png" alt="네이버블로그"></a></li>
+					<li><a href="javascript:;"><img src="./img/ft_sns4.png" alt="카카오플러스친구"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="ft_inner">
+		<div id="ft_add1">
+			<div id="ft_catch"><img src="./img/ft_logo.png" alt="굿뉴스월드"></div>
+			대표전화 02-574-6868&nbsp;&nbsp;|&nbsp;&nbsp;팩스 02-574-6869&nbsp;&nbsp;|&nbsp;&nbsp;이메일 office@gnworld.org<br>
+			(06748) 서울특별시 서초구 양재천로21길 9 화암빌딩 2층<br>
+			고유번호 : 214-82-15622&nbsp;&nbsp;|&nbsp;&nbsp;대표자 전홍준<br>
+			<div id="ft_copy">Copyright &copy;  굿뉴스월드. All rights reserved.</div>
+		</div>
+		<div id="ft_add2">
+			<h3>후원문의</h3>
+			<span>02-574-6868</span><br>
+			<br>
+			<h3>후원전용 계좌</h3>
+			<strong style="color:#000;">우리은행 1005-902-601854</strong> (예금주 : 사단법인 굿뉴스월드)<br>
+			기부금 영수증 등 후원내역 관리를 위해서 계좌입금 후 연락부탁드립니다.
+		</div>
+	</div>
+	<button id="top_btn"><i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단</span></button>
+</div>
+
+
+<!-- } end footer -->
+
+<script>
+jQuery(function($) {
+
+	$("#top_btn").on("click", function() {
+		$("html, body").animate({scrollTop:0}, '500');
+		return false;
+	});
+
+	// Font Resize by web Cookie
+	font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+});
+</script>
+
+
+</body>
+</html>
